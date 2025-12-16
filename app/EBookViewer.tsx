@@ -45,7 +45,7 @@ export default function EBookViewer() {
 
   return (
     <section className="card" style={{ maxWidth: "1000px", margin: "0 auto", overflow: "hidden" }}>
-      <h2 className="card-title">เอกสาร: Lab 001</h2>
+      <h2 className="card-title">เอกสาร</h2>
       <p className="subtitle" style={{ marginBottom: "20px" }}>คลิกที่มุมกระดาษหรือลากเมาส์เพื่อเปิดหน้า</p>
 
       <div

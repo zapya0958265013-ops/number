@@ -221,7 +221,7 @@ export default function Home() {
               {view === 'home' && 'ข้อมูลรายวิชาและหน่วยการเรียน'}
               {view === 'calculator' && 'คำนวณตัวเลขระหว่างค่า'}
               {view === 'grader' && 'ป้อนคะแนนเพื่อดูเกรด'}
-              {view === 'document' && 'เปิดอ่านเอกสาร Lab 001 แบบหนังสือ'}
+              {view === 'document' && 'เปิดอ่านเอกสาร'}
             </p>
           </header>
 
