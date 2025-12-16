@@ -77,6 +77,7 @@ function Grader() {
     else if (s >= 55) g = "D+";
     else if (s >= 50) g = "D";
     else g = "F";
+    
     setGrade(`${g} (${s}%)`);
   };
 
