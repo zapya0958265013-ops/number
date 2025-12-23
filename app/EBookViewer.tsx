@@ -11,6 +11,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.js";
 const DOCUMENTS = [
   { id: 1, title: "Lab 001: พื้นฐานระบบเครือข่าย", filename: "lab001.pdf", tags: ["network", "basic", "lab1"] },
   { id: 2, title: "Lab 002: การติดตั้งและกำหนดค่า", filename: "lad002.pdf", tags: ["config", "setup", "lab2"] }, // ชื่อไฟล์ตามที่คุณแจ้ง (lad002)
+  { id: 3, title: "Lab 003: การออกแบบเครือข่ายย่อย VLSM", filename: "lab003.pdf", tags: ["config", "setup", "lab3"] }, // ชื่อไฟล์ตามที่คุณแจ้ง (lad002)
+
 ];
 
 export default function EBookViewer() {
