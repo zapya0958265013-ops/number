@@ -4,9 +4,7 @@ import React, { useEffect, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 import { Document, Page, pdfjs } from "react-pdf";
 
-// --- แก้ไขตรงนี้ (สำคัญที่สุด) ---
-// ชี้ไปที่ไฟล์ Local ที่เราเพิ่งก๊อปปี้ไปวางใน folder public
-// ไม่ต้องใช้ URL ยาวๆ หรือ CDN แล้ว
+// ใช้ไฟล์ Worker จาก Local (ตามที่คุณตั้งค่าไว้ถูกต้องแล้ว)
 pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.js";
 
 export default function EBookViewer() {
@@ -45,9 +43,46 @@ export default function EBookViewer() {
 
   return (
     <section className="card" style={{ maxWidth: "1000px", margin: "0 auto", overflow: "hidden" }}>
-      <h2 className="card-title">เอกสาร</h2>
+      
+      {/* --- ส่วนหัวข้อและปุ่มดาวน์โหลด (ปรับปรุงใหม่) --- */}
+      <div style={{ 
+        display: "flex", 
+        justifyContent: "space-between", 
+        alignItems: "center", 
+        marginBottom: "10px",
+        flexWrap: "wrap", // เผื่อหน้าจอเล็กจะได้ไม่เบียดกัน
+        gap: "10px"
+      }}>
+        <h2 className="card-title" style={{ margin: 0 }}>เอกสาร: Lab 001</h2>
+        
+        {/* ปุ่มดาวน์โหลด */}
+        <a 
+          href={pdfPath} 
+          download="Lab001_Network_Admin.pdf" // ชื่อไฟล์ตอนโหลดลงเครื่อง
+          className="btn" // ใช้ class btn เดิมเพื่อให้สไตล์เหมือนปุ่มอื่น
+          style={{
+            textDecoration: "none",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            fontSize: "14px",
+            padding: "8px 16px",
+            height: "auto",
+            backgroundColor: "#2563eb", // สีน้ำเงินสวยๆ (หรือลบออกถ้า class btn มีสีอยู่แล้ว)
+            color: "white"
+          }}
+        >
+          {/* ไอคอนลูกศรลง (SVG) */}
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          ดาวน์โหลด PDF
+        </a>
+      </div>
+
       <p className="subtitle" style={{ marginBottom: "20px" }}>คลิกที่มุมกระดาษหรือลากเมาส์เพื่อเปิดหน้า</p>
 
+      {/* --- ส่วนแสดงผล E-Book (เหมือนเดิม) --- */}
       <div
         style={{
           display: "flex",
